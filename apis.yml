@@ -1,7 +1,15 @@
 aid: nocd
 name: NOCD
-description: 'NOCD is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'NOCD is a virtual mental-health provider specializing in the treatment
+  of obsessive-compulsive disorder. Through its web and mobile applications the company
+  matches members with licensed therapists trained in Exposure and Response Prevention
+  (ERP) therapy, delivers live video sessions, and provides between-session messaging,
+  a peer community, and in-app therapeutic tools. NOCD is in-network with a large number
+  of US health plans and serves children, adolescents, and adults. The product is delivered
+  as an end-user clinical service — the company operates a private mobile/web application
+  backend at api.treatmyocd.com but publishes no public developer program, API reference,
+  or machine-readable specification.'
+image: https://www.treatmyocd.com/images/meta-image.png
 url: https://raw.githubusercontent.com/api-evangelist/nocd/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +20,13 @@ created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Health Care
+- Mental Health
+- Telehealth
+- Digital Health
+- Therapy
+- Behavioral Health
+- Consumer Application
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +34,50 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/nocd-domain-security.yml
 - type: Website
+  url: https://www.treatmyocd.com/
+- type: Blog
+  url: https://www.treatmyocd.com/learn/blog
+- type: Support
+  url: https://www.treatmyocd.com/about-us/contact-us
+- type: Login
+  url: https://app.treatmyocd.com/login
+- type: TermsOfService
+  url: https://www.treatmyocd.com/terms
+- type: PrivacyPolicy
+  url: https://www.treatmyocd.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/treatmyocd
+- type: About
+  url: https://www.treatmyocd.com/about-us/our-story
+- type: Careers
+  url: https://www.treatmyocd.com/about-us/careers
+- type: SecondaryMarket
   url: https://forgeglobal.com/nocd_stock/
+- type: LLMsTxt
+  url: llms/nocd-llms.txt
+x-enrichment:
+  date: '2026-08-04'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    NOCD ships a consumer teletherapy app; its backend at api.treatmyocd.com answers a
+    plain-text 404 for /openapi.json, /openapi.yaml and /docs and 302s every other path to
+    the marketing site, and there is no developer.treatmyocd.com (NXDOMAIN) or developer
+    section anywhere on treatmyocd.com.
+  evidence:
+    - url: https://api.treatmyocd.com/openapi.json
+      status: 404
+    - url: https://api.treatmyocd.com/.well-known/agent-card.json
+      status: 302
+    - url: https://www.treatmyocd.com/llms.txt
+      status: 404
+    - url: https://docs.treatmyocd.com/
+      status: 404
+  checked: '2026-08-04'
