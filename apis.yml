@@ -9,6 +9,17 @@ description: 'NOCD is a virtual mental-health provider specializing in the treat
   as an end-user clinical service — the company operates a private mobile/web application
   backend at api.treatmyocd.com but publishes no public developer program, API reference,
   or machine-readable specification.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.treatmyocd.com/images/meta-image.png
 url: https://raw.githubusercontent.com/api-evangelist/nocd/refs/heads/main/apis.yml
 x-type: company
